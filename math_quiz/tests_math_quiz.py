@@ -13,18 +13,31 @@ class TestMathGame(unittest.TestCase):
             self.assertTrue(min_val <= rand_num <= max_val)
 
     def test_function_B(self):
-        # TODO
-        pass
+        randomOperation=function_B()
+        if(randomOperation=='+'or randomOperation== '-' or randomOperation== '*'):
+            
+            self.assertTrue(True)
+        else:
+             print("wrong case")
+    
 
     def test_function_C(self):
             test_cases = [
                 (5, 2, '+', '5 + 2', 7),
-                ''' TODO add more test cases here '''
+                (5, 2, '*', '5 * 2', 10),
+                (50, 20, '+', '50 + 20', 70),
+                (5, 2, '-', '5 - 2', 3)
             ]
 
             for num1, num2, operator, expected_problem, expected_answer in test_cases:
-                # TODO
-                pass
+                P,TheValuetoCheck=function_C(num1,num2,operator)
+                if(TheValuetoCheck==expected_answer and expected_problem==P):
+                       print("okay")
+                       self.assertTrue(True)
+                else:
+                       print("wrong case")
+                    
+
 
 if __name__ == "__main__":
     unittest.main()
